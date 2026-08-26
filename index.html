@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>GLOBAL — Coastal Sonic Resilience</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main id="hero-section">
+        <header id="main-header">
+            <h1>COASTAL SONIC RESILIENCE</h1>
+            <p class="subtitle">GLOBAL SOUND CARTOGRAPHY</p>
+        </header>
+
+        <div id="map-wrapper"></div>
+        
+        <button id="back-to-global-btn" onclick="loadGlobalView()">← GLOBAL MAP</button>
+        
+        <div id="video-overlay">
+            <video id="location-video" playsinline muted loop></video>
+        </div>
+
+     
+    </main>
+
+    <section id="info-section">
+        <p>An open-access acoustic archive dedicated to the sonic restoration of our oceans. Connecting marine biologists, sound artists, and coastal communities to advance ecological enrichment through the power of sound.</p>
+    </section>
+    
+    <section id="audio-gallery">
+        <h2 id="gallery-title">GLOBAL LOCATIONS</h2>
+        <div id="track-list"></div>
+    </section>
+
+    <div id="soundbar">
+        <div class="soundbar-header">
+            <div class="info">
+                <span class="label">RECORDING</span>
+                <span id="current-location-name">—</span>
+            </div>
+            <button class="close-btn" onclick="closeSoundbar()">✕</button>
+        </div>
+
+        <div id="waveform-container"></div>
+
+        <div class="soundbar-footer">
+            <span id="current-time" class="time">0:00</span>
+            <button id="play-pause-btn" onclick="togglePlay()">LOADING...</button>
+            <span id="total-duration" class="time">0:00</span>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="https://unpkg.com/wavesurfer.js@7/dist/wavesurfer.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
