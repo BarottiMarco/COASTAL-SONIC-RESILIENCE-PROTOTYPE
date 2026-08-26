@@ -73,10 +73,9 @@ const map = L.map('map-wrapper', {
     minZoom: 2                 
 }).setView([20.0, -30.0], 2);
 
-// We removed noWrap: true so the edges of the map can render correctly on ultrawide displays
-L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-    maxZoom: 19,
-    subdomains: 'abcd'
+// FIX: Swapped to Esri Dark Gray Canvas to remove the API key requirement watermarks
+L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
+    maxZoom: 16
 }).addTo(map);
 
 const markerLayerGroup = L.layerGroup().addTo(map);
